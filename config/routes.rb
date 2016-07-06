@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+
+  resources :expenses
+  resources :incomes
   root "static_pages#home"
   get 'signup'  => 'users#new'
+  get 'about' => 'static_pages#about'
+  get 'help' => 'static_pages#help'
+  get 'incomes' => 'incomes#index'
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
