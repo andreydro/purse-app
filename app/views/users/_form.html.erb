@@ -12,10 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :users %><br>
-    <%= f.text_field :users %>
+    <%= f.text_field :users, :placeholder => "User" %></br>
+    <%= f.email_field :email, :placeholder => "Email" %></br>
+    <%= f.password_field :password, :placeholder => "Password" %>
+
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create an account"%>
   </div>
 <% end %>
