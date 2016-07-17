@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160706172803) do
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.string   "user",            limit: 2044
+    t.string   "users",           limit: 2044
     t.string   "email",           limit: 2044
     t.string   "password_digest", limit: 2044
   end

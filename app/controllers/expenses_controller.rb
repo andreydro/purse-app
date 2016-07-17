@@ -1,5 +1,7 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_editor, only:[:show, :edit]
 
   # GET /expenses
   # GET /expenses.json

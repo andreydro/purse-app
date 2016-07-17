@@ -1,5 +1,7 @@
 class IncomesController < ApplicationController
   before_action :set_income, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_editor, only:[:show, :edit]
 
   # GET /incomes
   # GET /incomes.json
