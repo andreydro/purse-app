@@ -2,7 +2,8 @@
 
 <p>
   <strong>Users:</strong>
-  <%= @user.users %>
+  <%= @user.users %><br>
+  <%= current_user.email %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
