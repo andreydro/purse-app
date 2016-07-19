@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :require_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_editor, only:[:show, :edit]
+  before_action :require_editor, only:[:show, :edit] # ???
 
   def index
     @expenses = current_user.expenses.order('date desc')

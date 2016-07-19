@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :incomes, dependent: :destroy
   has_many :categories, dependent: :destroy
 
+  validates_uniqueness_of :email
+
   has_secure_password
 
   def add_category(category)
