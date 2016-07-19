@@ -6,7 +6,7 @@ class ExpensesControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :'2index'
     assert_response :success
     assert_not_nil assigns(:expenses)
   end

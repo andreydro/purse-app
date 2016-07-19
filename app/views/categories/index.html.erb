@@ -10,10 +10,10 @@
   <% @categories.each do |cat| %>
       <tr>
         <td><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> <%= cat.name %></td>
-        <td class="right">
-          <%= link_to "Edit", edit_category_path(cat.id), class: "btn btn-default btn-lg" %>
-          <%= link_to "Delete", category_path(cat.id), method: :delete, data: {confirm: "Delete categories?"}, class: "btn btn-default btn-lg" %>
-        </td>
+        <ul class="right">
+          <li><%= link_to "Edit", edit_category_path(cat.id), class: "btn btn-default btn-lg" %></li>
+          <li><%= link_to "Delete", category_path(cat.id), method: :delete, data: {confirm: "Delete categories?"}, class: "btn btn-default btn-lg" %></li>
+        </ul>
       </tr>
   <% end %>
 </div>

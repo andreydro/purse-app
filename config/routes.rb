@@ -11,9 +11,7 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
   get 'about' => 'static_pages#about'
   get 'help' => 'static_pages#help'
-  get 'incomes' => 'incomes#index'
   get 'login' => 'sessions#new'
-  get 'categories' => 'categories#index'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 

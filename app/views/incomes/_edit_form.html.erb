@@ -1,0 +1,8 @@
+<%= form_for @income do |f| %>
+    <%= f.number_field :sum, placeholder: "Amount", class: "form-control width-80" %>
+    <%= f.date_field :date, placeholder: "Date", class: "form-control width-80" %>
+    <%= f.fields_for (@income.category) do |ff| %>
+        <%= ff.select(:name, options_from_collection_for_select(current_user.categories, "name", "name"),{}, {class: "form-control width-80"}) %>
+    <% end %>
+    <%= f.submit nil, class: "btn btn-default width-80" %>
+<% end %>

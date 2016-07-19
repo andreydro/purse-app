@@ -1,6 +1,8 @@
 <h1>Editing Income</h1>
 
-<%= render 'form' %>
+<div>
+  <%= render partial: "edit_form" %>
+  <%= render partial: "errors/error" %>
+</div>|
 
-<%= link_to 'Show', @income %> |
 <%= link_to 'Back', incomes_path %>

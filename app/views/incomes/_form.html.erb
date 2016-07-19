@@ -1,22 +1,6 @@
-<%= form_for(@income) do |f| %>
-  <% if @income.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@income.errors.count, "error") %> prohibited this income from being saved:</h2>
-
-      <ul>
-      <% @income.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.number_field :sum, placeholder: "Amound", class: "form-control width-60" %>
-    <%= f.date_field :date, placeholder: "Date", class: "form-control width-60" %>
+<%= form_for @income = Income.new do |f| %>
+    <%= f.number_field :sum, placeholder: "Amount", class: "form-control width-80" %>
+    <%= f.date_field :date, placeholder: "Date", class: "form-control width-80" %>
     <%= f.select(:category, options_from_collection_for_select(current_user.categories, "name", "name"),{}, {class: "form-control width-80"}) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit nil, class: "btn btn-default width-80" %>
 <% end %>
