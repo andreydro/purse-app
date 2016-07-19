@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :expenses
-  resources :incomes
+  resources :categories, except: [:show]
+  resources :expenses, except: [:show]
+  resources :incomes, except: [:show]
+
+
   root "static_pages#home"
 
   get 'home' => 'static_pages#home'
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
   get 'help' => 'static_pages#help'
   get 'incomes' => 'incomes#index'
   get 'login' => 'sessions#new'
+  get 'categories' => 'categories#index'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 

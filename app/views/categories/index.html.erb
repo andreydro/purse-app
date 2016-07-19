@@ -1,0 +1,19 @@
+<br>
+<%= link_to "Add new Category", new_category_path, class: "btn btn-default btn-lg" %>
+<br>
+
+<div class="table table-striped">
+  <% unless @categories.empty? %>
+      <h2>Your categories:</h2>
+  <% end %>
+
+  <% @categories.each do |cat| %>
+      <tr>
+        <td><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> <%= cat.name %></td>
+        <td class="right">
+          <%= link_to "Edit", edit_category_path(cat.id), class: "btn btn-default btn-lg" %>
+          <%= link_to "Delete", category_path(cat.id), method: :delete, data: {confirm: "Delete categories?"}, class: "btn btn-default btn-lg" %>
+        </td>
+      </tr>
+  <% end %>
+</div>

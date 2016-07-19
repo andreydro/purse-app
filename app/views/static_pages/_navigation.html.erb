@@ -1,0 +1,16 @@
+<div class="nav pull-right">
+  <% if current_user %>
+      <ul>
+        <li><%= current_user.email %></li>
+        <li class="item"><%= link_to "Expenses", expenses_path %></li>
+        <li class="item"><%= link_to "Incomes", incomes_path %></li>
+        <li class="item"><%= link_to "Categories", categories_path %></li>
+        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+      </ul>
+  <% else %>
+      <ul>
+        <li><%= link_to "Login", 'login'%></a></li>
+        <li><%= link_to "Signup", 'signup' %></a></li>
+      </ul>
+  <% end %>
+</div>

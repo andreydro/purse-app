@@ -12,8 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :expenses %><br>
-    <%= f.number_field :expenses %>
+    <%= f.number_field :sum, placeholder: "Amound", class: "form-control width-80" %>
+    <%= f.date_field :date, placeholder: "Date", class: "form-control width-80" %>
+    <%= f.select(:category, options_from_collection_for_select(current_user.categories, "name", "name"),{}, {class: "form-control width-80"}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

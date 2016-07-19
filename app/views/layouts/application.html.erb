@@ -7,22 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <%= render 'layouts/header' %>
-    <div class="nav pull-right">
-      <% if current_user %>
-          <ul>
-            <li><%= current_user.email %></li>
-            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-          </ul>
-      <% else %>
-          <ul>
-            <li><%= link_to "Login", 'login'%></a></li>
-            <li><%= link_to "Signup", 'signup' %></a></li>
-          </ul>
-      <% end %>
-    </div>
     <div class="container">
+        <%= render 'layouts/header' %>
+
+        <%= render 'static_pages/navigation'%>
+
         <%= yield %>
+
         <%= render 'layouts/footer' %>
     </div>
 </body>
