@@ -1,0 +1,59 @@
+<br>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <ul class="nav nav-pills report-labels">
+      <li class="item">Start date</li>
+      <li class="item">End date</li>
+      <li class="item">Category</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-12">
+    <%= render partial: "form" %>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <table class="table">
+      <tr>
+        <td>Total incomes:</td>
+        <td style="color: green"><%= number_to_currency(@incomes_sum, unit: "", precision: 0) %></td>
+      </tr>
+      <tr>
+        <td> Total expenses:</td>
+        <td style="color: red"> <%= number_to_currency(@expenses_sum, unit: "", precision: 0) %></td>
+      </tr>
+      <tr>
+        <td>Balance:</td>
+        <td style="color: <%= @balance > 0 ? "green" : "red" %>"><%= number_to_currency(@balance, unit: "", precision: 0) %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <% @report_data.each do |data|%>
+          <tr style="color: <%= data.class == Expense ? "red" : "green"  %>">
+            <td><%= data.category.name %></td>
+            <td><%= number_to_currency(data.sum, unit: "", precision: 0) %></td>
+            <td><%= data.date %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
